@@ -4,7 +4,7 @@ const customersSchema = new mongoose.Schema({
     fullName: String,
     email:String,
     contact:Number,
-    password:String,
+    otp:Number,
     cart:Array
 }); 
 
