@@ -18,6 +18,14 @@ nav{
     width:20%;
     text-align: center;
 }
+#brand img{
+    transition:all 0.5s;
+}
+#brand img:hover{
+    background-color:orangered;
+    border-radius: 50%;
+    padding:0.2em;
+}
 #menu{
     width:80%;
     font-size:1.3em;
@@ -39,7 +47,8 @@ nav a{
     transition:all 1s;
 }
 nav a:hover{
-    transform: translateY(-0.3em);
+    /* transform: translateY(-0.3em); */
+    font-size: 1.1em;
     text-decoration: underline;
 }
 /* Vendors */
@@ -60,6 +69,7 @@ main{
 .vendor a{
     color:inherit;
     width: 100%;
+    transition:all 1s;
 }
 .vendor a:hover{
     color:rgb(121, 182, 31)
@@ -107,6 +117,22 @@ main{
     min-height:20vh;
     box-shadow: 0 0.5em 1em 0.1em #00000055;
     background: #F1F1F1;
+    padding:2em;
+}
+.detail-input{
+    display: flex;
+    margin-bottom:1em;
+    font-size:1.2em;
+    justify-content: flex-start;
+}
+#total{
+    margin-right: 2.3em;
+}
+.detail-input i{
+    margin-right: 2em;
+}
+.detail-input:last-child{
+    margin-bottom:0;
 }
 .open-details{
     margin-top:2em;
