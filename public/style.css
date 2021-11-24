@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+}
+a{
+    text-decoration:none;
+}
+/* font-family: 'Fira Code', monospace; */
+/* NAVBAR */
+nav{
+    display: flex;
+    align-items: center;
+    padding:1.2em;
+    background-color: orange;
+}
+#brand{
+    width:20%;
+    text-align: center;
+}
+#menu{
+    width:80%;
+    font-size:1.3em;
+    font-weight: 600;
+}
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    padding:1em;
+}
+nav a{
+    padding:0.5em 1em;
+    border-radius: 1em;
+    min-width: 7em;
+    text-align: center;
+    color:white;
+    transition:all 1s;
+}
+nav a:hover{
+    transform: translateY(-0.3em);
+    text-decoration: underline;
+}
+/* Vendors */
+main{
+    margin:2em;
+    padding:1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.vendor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:2em;
+}
+.vendor a{
+    color:inherit;
+    width: 100%;
+}
+.vendor a:hover{
+    color:rgb(121, 182, 31)
+}
+.vendor-name{
+    padding:1em;
+    padding-bottom:0;
+    border:2px black solid;
+    border-radius: 1em;
+    min-width:35vw;
+    min-height:20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #F1F1F1;
+    box-shadow: 0 0.5em 1em 0.1em #00000055;
+    z-index: 1;
+}
+.vendor-name i{
+    font-size:2.5em;
+    cursor: pointer;
+}
+.vender-name-text{
+    font-family: 'Rampart One', cursive;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:100%;
+    height: 10vh;
+    font-size: 4em;
+    font-weight: bold;
+}
+.vender-name-text img{
+    margin-top:0.2em
+    /* background-color: red; */
+}
+.vendor-details{
+    z-index: 0;
+    display: none;
+    border:1px black solid;
+    border-radius: 0 0 1em 1em;
+    border-top:none;
+    min-width:30vw;
+    min-height:20vh;
+    box-shadow: 0 0.5em 1em 0.1em #00000055;
+    background: #F1F1F1;
+}
+.open-details{
+    margin-top:2em;
+}
+.open-details i:hover{
+    color:orangered
+}
+/* Footer */
+footer{
+    min-height: 10vh;
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
