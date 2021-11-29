@@ -8,6 +8,13 @@ const customersSchema = new mongoose.Schema({
     cart:Array
 }); 
 
+const restaurantSchema = new mongoose.Schema({
+    Name: String,
+    Menu:Array,
+    Location:String
+});
+
 //Creating a model
 const Customer = mongoose.model('Customer',customersSchema)
-module.exports = Customer
+const Restaurant = mongoose.model('Restaurants',restaurantSchema)
+module.exports = {Customer,Restaurant}
