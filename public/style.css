@@ -14,6 +14,11 @@ nav{
     padding:1.2em;
     background-color: orange;
 }
+/* Home page logo */
+#brand-home>img{
+    width:8em;
+}
+/*  */
 #brand{
     width:20%;
     text-align: center;
@@ -25,6 +30,9 @@ nav{
     background-color:orangered;
     border-radius: 50%;
     padding:0.2em;
+}
+#menu-page{
+    min-height: 70vh;
 }
 #menu{
     width:80%;
@@ -142,9 +150,160 @@ main{
 }
 /* Footer */
 footer{
+    position: relative;
+    bottom:0;
+    width: 100%;
     min-height: 10vh;
     background-color: #F0F0F0;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Login page */
+#login-page{
+    min-height: 70vh;
+}
+.login{
+    width:25vw;
+    display: flex;
+    flex-direction: column;
+}
+.login .input{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+}
+.login input{
+    padding:1em;
+    border-radius: 1em;
+    margin:1em 0;
+}
+.login button{
+    padding:1em;
+    background-color: rgb(63, 218, 218);
+    border-radius: 1em;
+}
+.login button:hover{
+    background-color: rgb(81, 248, 248);
+}
+/* RESTAURANTS PAGE */
+.search_bar {
+    text-align: center;
+    padding: 20px;
+}
+.search_bar input{
+    width: 30vw;
+    text-align: center;
+    background-color: bisque;
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em;
+    font-size: 1.3em;
+}
+.restaurants{
+    min-height: 100vh;
+    margin:2em auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.restaurants img {
+    width: 10em;
+    height:auto;
+    border-radius: 1em;
+    object-fit: contain;
+  }
+.restaurant_card {
+    min-width: 25em;
+    border: black 2px solid;
+    border-radius: 1.5em;
+    display: flex;
+    flex-direction: column;
+    margin:1em;
+}
+.restaurants .name {
+    background-color: #FF3737;
+    color: white;
+    font-size: 1.3em;
+    padding:0.5em;
+    display: flex;
+    justify-content: center;
+    border-radius: inherit;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    
+}
+.restaurant_card>div{
+    display: flex;
+    padding: 1em;
+}
+.card-right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.card-left>div{
+    display: flex;
+    justify-content: space-between;
+}
+.card-left .logo{
+    font-size:1.6em;
+    width:20%;
+    text-align: center;
+}
+.card-left .text{
+    font-size:1em;
+    display: flex;
+    text-align: right;
+    align-items: center;
+    justify-content: center;
+}
+.restaurants a {
+    text-decoration: none;
+    color: white;
+}
+/* Final Checkout Page */
+#checkout{
+    min-height: 80vh;
+}
+#final-receipt{
+    margin-top:2em;
+    width:60%;
+    min-height: 30vh;
+    border: 1px black solid;
+    border-radius: 1em;
+    padding:1em;
+    display: flex;
+    flex-direction: column;
+}
+#receipe-head{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding:0.5em;
+    color:white;
+    background-color: orangered;
+}
+table{
+    width: 80%;
+    text-align: center;
+    margin:0 auto;
+}
+thead{
+    font-weight: bold;
+}
+thead td{
+    border-bottom: 1px black solid;
+    padding:1em;
+}
+tbody tr:last-child{
+    font-weight: bold;
 }

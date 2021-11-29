@@ -9,13 +9,13 @@
         </div>
         <div id="menu">
             <ul>
-                <a href="">
+                <a href="/restaurants?userid=<%=customer._id%>">
                     <li>
                         <i class="fas fa-utensils"></i>
                         Restaurants
                     </li>
                 </a>
-                <a href="">
+                <a href="#">
                     <li>
                         <i class="fas fa-search"></i>
                         Search
@@ -28,10 +28,16 @@
                         Account
                     </li>
                 </a>
-                <a href="/selectvendor">
+                <a href="/selectvendor?userid=<%=customer._id%>">
                     <li>
                         <i class="fas fa-shopping-cart"></i>
                         Checkout
+                    </li>
+                </a>
+                <a href="/logout">
+                    <li>
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
                     </li>
                 </a>
             </ul>

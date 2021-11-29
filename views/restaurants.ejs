@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header')%>
+    <title>Restuarants</title>
+</head>
+
+<body>
+    <%- include('partials/navbar')%>
+        <div class="search_bar">
+            <input type="text" placeholder="Search for Restaurants and Food...">
+        </div>
+        <div class="restaurants">
+            <%for(let r of restaurants){%>
+            <div class="restaurant_card">
+                <div class="name">
+                    <a href="/menu?userid=<%=customer._id%>&id=<%=r._id%>"><%=r.Name%></a>
+                </div>
+                <div>
+                    <div class="card-left">
+                        <div>
+                            <div class="logo">
+                                &#9733;
+                            </div>
+                            <div class="text">
+                                4.5/5
+                            </div>
+                        </div>
+                        <div>
+                            <div class="logo">
+                                &#128349;
+                            </div>
+                            <div class="text">
+                                <%=Math.floor(Math.random()*60+15)%> minutes
+                            </div>
+                        </div>
+                        <div>
+                            <div class="logo">
+                                &#x1F4CD;
+                            </div>
+                            <div class="text">
+                                <%=r.Location%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <img src="image.jfif">
+                    </div>
+                </div>
+            </div>
+            <%}%>
+        </div>
+</body>
+
+</html>

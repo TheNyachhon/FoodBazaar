@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header')%>
+        <link rel="stylesheet" href="menu.css">
+        <title>Restuarants</title>
+</head>
+
+<body>
+    <%- include('partials/navbar')%>
+        <div id="header">
+            <h1>
+                <%=restaurant.Name%>
+            </h1>
+        </div>
+        <main id="menu-page">
+            <div class="menu-items">
+                <%for(let x of restaurant.Menu){%>
+                    <div class="item">
+                        <div class="text">
+                            <div class="dish-name">
+                                <%=x.name%>
+                            </div>
+                            <div class="dish-price">
+                                <i class="fas fa-rupee-sign"></i>
+                                <%=x.price%>
+                            </div>
+                            <div class="dish-desc">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            </div>
+                        </div>
+                        <div class="img">
+                            <img src="image.jfif" alt="" srcset="">
+                            <a
+                                href="/menu?userid=<%=customer._id%>&id=<%=restaurant._id%>&item=<%=x.name%>&price=<%=x.price%>">
+                                <button>
+                                    Add
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <%}%>
+            </div>
+            <div class="cart">
+                <div class="cart-header">
+                    Cart
+                </div>
+                <div class="cart-items">
+                    <%if(customer.cart.length == 0){%>
+                        CART EMPTY
+                    <%}else{%>
+                        <%for(let x of customer.cart){ %>
+                            <div class="cart-item">
+                                <div class="item-name">
+                                    <%=x.Item%>
+                                </div>
+                                <div class="item-price">
+                                    <i class="fas fa-rupee-sign"></i>
+                                    <%=x.Price%>
+                                </div>
+                                <div class="item-delete">
+                                    <a href="">
+                                        <i class="fas fa-minus-square"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        <%}%>
+                    <%}%>
+                </div>
+
+            </div>
+        </main>
+</body>
+<%- include('partials/footer')%>
+
+</html>

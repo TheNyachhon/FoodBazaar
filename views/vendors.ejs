@@ -9,11 +9,15 @@
 <body>
     <!-- include navbar -->
     <%- include('partials/navbar')%>
+    <%let total = 0%>
+    <%for(let x of customer.cart){ %>
+        <%total = parseInt(x.Price)+total%>
+    <%}%>
         <main>
             <h2>Please choose a delivery vendor</h2>
             <div class="vendor">
                 <div class="vendor-name">
-                    <a href="/checkout/?vendor=swiggy">
+                    <a href="/checkout?vendor=swiggy&userid=<%=customer.id%>">
                         <div class="vender-name-text">
                             Swiggy
                             <img src="https://img.icons8.com/doodle/100/000000/swiggy.png" />
@@ -32,7 +36,7 @@
                     <div class="detail-input">
                         <i class="fas fa-rupee-sign" id="total"></i>
                         <!-- insert total amount here -->
-                        INR 123123
+                        INR <%=total%>
                     </div>
                     <div class="detail-input">
                         <i class="fas fa-ticket-alt"></i>
@@ -42,7 +46,7 @@
             </div>
             <div class="vendor">
                 <div class="vendor-name">
-                    <a href="/checkout/?vendor=zomato">
+                    <a href="/checkout?vendor=zomato&userid=<%=customer.id%>">
                         <div class="vender-name-text">
                             Zomato
                             <img src="https://img.icons8.com/doodle/100/000000/zomato.png" />
@@ -61,7 +65,7 @@
                     <div class="detail-input">
                         <i class="fas fa-rupee-sign" id="total"></i>
                         <!-- insert total amount here -->
-                        INR 123123
+                        INR <%=total%>
                     </div>
                     <div class="detail-input">
                         <i class="fas fa-ticket-alt"></i>
@@ -71,7 +75,7 @@
             </div>
             <div class="vendor">
                 <div class="vendor-name">
-                    <a href="/checkout/?vendor=ubereats">
+                    <a href="/checkout/?vendor=ubereats&userid=<%=customer.id%>">
                         <div class=" vender-name-text">
                             Uber Eats
                             <img src="https://img.icons8.com/color/100/000000/uber-eats-app.png" />
@@ -90,7 +94,7 @@
                     <div class="detail-input">
                         <i class="fas fa-rupee-sign" id="total"></i>
                         <!-- insert total amount here -->
-                        INR 123123
+                        INR <%=total%>
                     </div>
                     <div class="detail-input">
                         <i class="fas fa-ticket-alt"></i>
