@@ -15,47 +15,64 @@
                         <img src="https://img.icons8.com/doodle/150/000000/swiggy.png" />
                         <%}else if(vendor=="zomato" ){%>
                             <img src="https://img.icons8.com/doodle/150/000000/zomato.png" />
-                            <%}else{%>
+                            <%}else if(vendor=="ubereats" ){%>
                                 <img src="https://img.icons8.com/color/150/000000/uber-eats-app.png" />
                                 <%}%>
                 </div>
                 <div id="final-receipt">
-                    <div id="receipe-head">
-                        Invoice
-                    </div>
-                    <div id="receipe-body">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>Item</td>
-                                    <td>Cost</td>
-                                </tr>
-                            </thead>>
-                            <tbody>
-                                <%for(let x of customer.cart){%>
-                                    <tr>
-                                        <td>
-                                            <%=x.Item%>
-                                        </td>
-                                        <td>
-                                            <%=x.Price%>
-                                        </td>
-
-                                    </tr>
-                                    <%}%>
+                    <%let items=customer.cart.length%>
+                        <%if(items!=0){%>
+                            <div id="receipe-head">
+                                Invoice
+                            </div>
+                            <div id="receipe-body">
+                                <table>
+                                    <thead>
                                         <tr>
-                                            <td>TOTAL:</td>
-                                            <%let total=0%>
-                                                <%for(let x of customer.cart){ %>
-                                                    <%total=parseInt(x.Price)+total%>
-                                                        <%}%>
-                                                            <td>
-                                                                <%=total%>
-                                                            </td>
+                                            <td>Item</td>
+                                            <td>Cost</td>
                                         </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                    </thead>>
+                                    <tbody>
+                                        <%for(let x of customer.cart){%>
+                                            <tr>
+                                                <td>
+                                                    <%=x.Item%>
+                                                </td>
+                                                <td>
+                                                    <%=x.Price%>
+                                                </td>
+
+                                            </tr>
+                                            <%}%>
+                                                <tr>
+                                                    <td>TOTAL:</td>
+                                                    <%let total=0%>
+                                                        <%for(let x of customer.cart){ %>
+                                                            <%total=parseInt(x.Price)+total%>
+                                                                <%}%>
+                                                                    <td>
+                                                                        <%=total%>
+                                                                    </td>
+                                                </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="apply-coupon">
+                                <input type="text" placeholder="Enter Coupon Code">
+                                <button>Apply Coupon</button>
+                            </div>
+                            <div id="make-payment">
+                                <button>
+                                    Pay now
+                                </button>
+                            </div>
+                            <%}else{%>
+                                <div id="empty-cart">
+                                    Your cart is empty!
+                                    <i class="fab fa-dropbox"></i>
+                                </div>
+                                <%}%>
                 </div>
         </main>
         <%- include('partials/footer')%>

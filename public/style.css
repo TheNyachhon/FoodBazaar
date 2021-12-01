@@ -284,6 +284,17 @@ footer{
     display: flex;
     flex-direction: column;
 }
+#final-receipt button{
+    font-size:inherit;
+    padding:0.5em;
+    border-radius:0.5em;
+    margin-left:2em;
+    color:white;
+    border:none;
+}
+#final-receipt button:active{
+    transform: translateY(0.2em);
+}
 #receipe-head{
     text-align: center;
     font-weight: bold;
@@ -306,4 +317,44 @@ thead td{
 }
 tbody tr:last-child{
     font-weight: bold;
+}
+#apply-coupon{
+    margin:2em;
+    padding:1em;
+    text-align: center;
+    border-top:1px rgba(128, 128, 128, 0.4) solid;
+}
+#apply-coupon input{
+    font-size: 1em;
+    margin-top:1em;
+    padding:0.5em;
+    outline: none;
+    border-radius: 1em;
+}
+#apply-coupon button{
+    background-color:#FF3737;
+}
+#apply-coupon button:hover{
+    box-shadow: 0 0 0.8em 0.1em orangered;
+}
+#make-payment{
+    text-align: center;
+}
+#make-payment button{
+    margin:0;
+    background-color: rgb(0, 248, 0);
+}
+#make-payment button:hover{
+    box-shadow: 0 0 0.8em 0.1em rgba(0, 248, 0, 0.658);
+}
+#empty-cart{
+    margin:auto;
+    display: flex;
+    align-items: center;
+    font-size:1.5em;
+}
+#empty-cart i{
+    color:cadetblue;
+    font-size:2em;
+    margin-left:1em;
 }
