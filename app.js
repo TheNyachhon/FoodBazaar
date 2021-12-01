@@ -99,7 +99,8 @@ app.get('/menu', async (req, res) => {
     await Restaurant.findOne({ _id: id })
         .then(async (restaurant) => {
             if (item) {
-                await Customer.findOneAndUpdate({ _id: userid }, { $push: { cart: { Restaurant: restaurant.Name, Item: item, Price: price } } })
+                var itemID = mongoose.Types.ObjectId();
+                await Customer.findOneAndUpdate({ _id: userid }, { $push: { cart: { _id: itemID, Restaurant: restaurant.Name, Item: item, Price: price } } })
                     .then(async () => {
                         console.log("Added to cart")
                         res.redirect('?userid=' + userid + '&id=' + id)
@@ -112,6 +113,25 @@ app.get('/menu', async (req, res) => {
             // console.log(e)
         })
 
+})
+//Deleteing items from cart
+app.get('/delete', async (req, res) => {
+    const { userid, id, itemID } = req.query
+    await Customer.findOne({ _id: userid })
+        .then(async (d) => {
+            let idToDelete
+            for(let x of d.cart){
+                if(x._id==itemID){
+                    idToDelete=x._id
+                    break
+                }
+            }
+            await Customer.findOneAndUpdate({ _id: userid }, { $pull: { cart: { _id: idToDelete } } }, { safe: true, multi: true })
+                .then(d => {
+                    console.log("item deleted")
+                })
+        })
+    res.redirect('/menu?userid=' + userid + '&id=' + id)
 })
 //id will be passed below 
 app.get('/selectvendor', async (req, res) => {
