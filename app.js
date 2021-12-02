@@ -150,6 +150,9 @@ app.get('/checkout', async (req, res) => {
 app.get('/logout', (req, res) => {
     res.redirect('login?logout=successful')
 })
+app.get('/', (req, res) => {
+    res.redirect('/login')
+})
 app.get('*', (req, res) => {
     res.send('woops! you look lost.')
 })
